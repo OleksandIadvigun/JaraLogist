@@ -13,6 +13,9 @@ MAN TGA
 MAN TGX 
 40000
 30
+Daf
+25000
+25
 
 
 
