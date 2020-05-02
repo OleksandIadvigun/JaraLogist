@@ -1,0 +1,14 @@
+trailer KRONE
+10000
+trailer BB
+5000
+trailer Muller
+30000
+trailer Flegl
+25000
+ref trailer Zaslaw
+10000
+5
+ref trailer DDD
+30000
+8

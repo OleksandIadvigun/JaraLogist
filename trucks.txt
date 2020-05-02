@@ -1,0 +1,18 @@
+Mercedes Actros 
+40000
+30
+Iveco Daily
+7000
+15
+MAN TGA
+25000
+23
+MAN TGA
+20000
+20
+MAN TGX 
+40000
+30
+
+
+

@@ -1,0 +1,28 @@
+meat "Bobik"
+25000
+-10
+600
+water "Blue water"
+24000
+20
+340
+icecream "Lasunka"
+9000
+-15
+700
+cloches "H&M"
+5000
+20
+1200
+computers "HP"
+7000
+20
+1800
+toys "Leggo"
+15000
+20
+550
+meat "Vaski salo"
+24000
+-15
+1450
