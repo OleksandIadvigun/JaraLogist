@@ -1,4 +1,8 @@
-public class Truck implements Info{
+import interfaces.Info;
+import trailers.AbstractTrailer;
+import trailers.Trailer;
+
+public class Truck implements Info {
    private String name;
    private int maxWeight;
    private int oilConsumptionLoad;
@@ -39,5 +43,9 @@ public class Truck implements Info{
 
     public String toString(){
        return "TRUCK: " + "name: " + name + "; maxWeight: " + maxWeight + " kg; oilConsumptionLoad: " + oilConsumptionLoad + " L/100 km";
+    }
+
+    public int compareTo(Truck o) {
+        return this.getMaxWeight() - o.getMaxWeight();
     }
 }

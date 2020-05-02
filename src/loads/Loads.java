@@ -1,14 +1,31 @@
-public class Loads implements Info{
+package loads;
+
+import interfaces.Info;
+import trailers.AbstractTrailer;
+
+public class Loads implements Info, Comparable<Loads>{
     private String name;
     private int cargoWeight;
     private int temperature;
     private int distance;
+    private boolean taken = false;
 
     public Loads(String name, int cargoWeight, int temperature, int distance){
         this.name = name;
         this.cargoWeight = cargoWeight;
         this.temperature = temperature;
         this.distance = distance;
+    }
+
+    public static Loads makeLoads(String name, int cargoWeight, int temperature, int distance) {
+        return new Loads(name, cargoWeight, temperature, distance);
+    }
+
+    public void take() {
+        taken = true;
+    }
+    public boolean canTake() {
+        return !taken;
     }
 
     public String getName() {
@@ -43,14 +60,12 @@ public class Loads implements Info{
         this.distance = distance;
     }
 
-    @Override
-    public void showInfo() {
-        System.out.println("CARGO: " + name + "; cargo Weight: " + cargoWeight + " kg; temperature for transport: " + temperature +
-                " C; distance: " + distance + " km");
-    }
-
     public String toString(){
       return "CARGO: " + name + "; cargo Weight: " + cargoWeight + " kg; temperature for transport: " + temperature +
               " C; distance: " + distance + " km";
+    }
+
+    public int compareTo(Loads o) {
+        return this.getCargoWeight() - o.getCargoWeight();
     }
 }
