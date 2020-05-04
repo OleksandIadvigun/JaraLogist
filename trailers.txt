@@ -12,3 +12,9 @@ ref trailer Zaslaw
 ref trailer DDD
 30000
 8
+hot trailer Kuzia
+20000
+200
+hot trailer Garix
+10000
+120

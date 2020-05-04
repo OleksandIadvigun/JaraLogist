@@ -26,3 +26,11 @@ meat "Vaski salo"
 24000
 -15
 1450
+bread " Bulka"
+7000
+40
+300
+bread "Gali Bread"
+15000
+35
+450
