@@ -1,6 +1,7 @@
 import interfaces.Info;
 import loads.Loads;
 import trailers.AbstractTrailer;
+import trailers.HotTrailer;
 import trailers.ReF;
 import trailers.Trailer;
 
@@ -10,6 +11,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Processor {
+
+    static int  AllConsumptionOli = 0;
     List<Loads> allLoads = new ArrayList<>();
     List<AbstractTrailer> trailers = new ArrayList<>();
     List<Truck> trucks = new ArrayList<>();
@@ -45,6 +48,9 @@ public class Processor {
             if (bestMatch != -1 && trailer.canDrive()) {
                 result.add(new Connection(trailer, trucks.get(bestMatch)));
                 trailer.drive();
+                trailer.IsitRef();                                                  //  ???
+                int distanceForTruck = trailer.getDistancefromTakenLoad();
+                AllConsumptionOli += trucks.get(bestMatch).getOilConsumptionLoad() * distanceForTruck/100;   /////////////
                 trucks.remove(bestMatch);
             }
         }
@@ -100,15 +106,18 @@ public class Processor {
     public void appendTrailersFromFile(Scanner trailerFile) {
         do {
             String name = trailerFile.nextLine();
-            String ref = "ref";
             Trailer trailer = null;
             int maxLoading = Integer.parseInt(trailerFile.nextLine());
-            if (compareStrings(name, ref) == 1) {
+            if (compareStrings(name, "ref") == 1) {
                 int consumptionOil = Integer.parseInt(trailerFile.nextLine());
                 trailer = new ReF(name, maxLoading, consumptionOil);
-            } else {
-                trailer = new Trailer(name, maxLoading);
+            }else if(compareStrings(name, "hot") == 1 ) {
+                int electricity = Integer.parseInt(trailerFile.nextLine());
+                trailer = new HotTrailer(name, maxLoading, electricity);
             }
+            else {
+                trailer = new Trailer(name, maxLoading);
+        }
             trailers.add(trailer);
         } while (trailerFile.hasNext());
     }
@@ -137,5 +146,11 @@ public class Processor {
             allLoads.add(loads);
 
         } while (loadsFile.hasNext());
+    }
+    public void showStatistics(){
+        Trailer trailer = null;
+        System.out.println();
+        System.out.println("Consumption oil by all trucks: " + AllConsumptionOli  + " L");
+        trailer.showStatistisc2();
     }
 }

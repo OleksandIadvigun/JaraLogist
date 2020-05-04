@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class main {
-
     public static void main(String[] args) throws FileNotFoundException {
         Processor proc = new Processor();
 
@@ -35,5 +34,7 @@ public class main {
         for(Loads l : notTaken) {
             System.out.println(l.toString());
         }
+        proc.showStatistics();
+
     }
 }
