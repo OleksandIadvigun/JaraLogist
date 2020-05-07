@@ -8,6 +8,7 @@ import java.util.List;
 
 public abstract class AbstractTrailer implements Info, Comparable<AbstractTrailer> {
 
+
     @Override
     public String toString() {
         return "";
@@ -33,4 +34,9 @@ public abstract class AbstractTrailer implements Info, Comparable<AbstractTraile
     protected abstract void addLoad(final Loads load);
 
     protected abstract boolean canAddLoad(final Loads load);
+
+    public abstract int getDistanceFromTakenLoad();
+
+    public abstract boolean IsItRef();
+
 }

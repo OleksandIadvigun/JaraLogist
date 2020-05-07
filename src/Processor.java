@@ -48,8 +48,8 @@ public class Processor {
             if (bestMatch != -1 && trailer.canDrive()) {
                 result.add(new Connection(trailer, trucks.get(bestMatch)));
                 trailer.drive();
-                trailer.IsitRef();                                                  //  ???
-                int distanceForTruck = trailer.getDistancefromTakenLoad();
+                                                               //  ???
+                int distanceForTruck = trailer.getDistanceFromTakenLoad();
                 AllConsumptionOli += trucks.get(bestMatch).getOilConsumptionLoad() * distanceForTruck/100;   /////////////
                 trucks.remove(bestMatch);
             }
@@ -151,6 +151,6 @@ public class Processor {
         Trailer trailer = null;
         System.out.println();
         System.out.println("Consumption oil by all trucks: " + AllConsumptionOli  + " L");
-        trailer.showStatistisc2();
+        trailer.showStatistics2();
     }
 }

@@ -2,6 +2,9 @@ package trailers;
 
 import loads.Loads;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ReF extends Trailer {
     int consumptionOil;
 
@@ -14,8 +17,12 @@ public class ReF extends Trailer {
         return consumptionOil;
     }
 
+
     @Override
     protected boolean canAddLoad(final Loads load) {
         return getMaxLoading() >= load.getCargoWeight() && load.getTemperature() <= 0;
     }
-}
+    public boolean IsItRef() {
+        return true;
+    }
+ }
